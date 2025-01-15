@@ -15,7 +15,7 @@ const Counter = () => {
   const handleCountIncrease = () => {
     SetCount((c) => Step + c);
   };
-  const date = new Date("Mon june 2047");
+  const date = new Date("june 21 2047");
   date.setDate(date.getDate() + Count);
 
   return (
@@ -58,7 +58,7 @@ const Counter = () => {
               ? "Today is "
               : Count > 0
               ? `${Count} days from today is `
-              : `${Count} days ago from today was `}
+              : `${Math.abs(Count)} days ago from today was `}
           </span>
           <span>{date.toDateString()}</span>
         </p>
