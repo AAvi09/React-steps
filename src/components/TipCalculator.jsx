@@ -4,7 +4,7 @@ const TipCalculator = ({ finalBill, tipPercentage, bill }) => {
   return (
     <div>
       <h1>
-        You pay {finalBill}$ ({bill} + {tipPercentage})$
+        You pay ${finalBill} $({bill} + {tipPercentage}tip)
       </h1>
     </div>
   );
