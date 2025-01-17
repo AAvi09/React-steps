@@ -15,12 +15,21 @@ const faqs = [
 ];
 
 const Accordian = () => {
+  const [curOpen, setIsCurOpen] = useState(null);
+
   return (
     <div className="w-screen h-screen bg-white text-center">
       <h1 className="text-black font-bold">ACCORDIAN</h1>
       <div className="bg-zinc-600 text-white font-bold space-y-10 justify-center">
-        {faqs.map((faq, i) => (
-          <AccordianItem num={i} key={i} title={faq.title} text={faq.text} />
+        {faqs.map((faq, num) => (
+          <AccordianItem
+            num={num}
+            curOpen={curOpen}
+            setIsCurOpen={setIsCurOpen}
+            key={num}
+            title={faq.title}
+            text={faq.text}
+          />
         ))}
       </div>
     </div>
@@ -29,19 +38,19 @@ const Accordian = () => {
 
 export default Accordian;
 
-const AccordianItem = ({ num, title, text }) => {
-  const [showText, setShowText] = useState(false);
-  const handleToggleText = () => {
-    setShowText(!showText);
+const AccordianItem = ({ num, curOpen, setIsCurOpen, title, text }) => {
+  const handleToggle = () => {
+    setIsCurOpen(num);
   };
+  const isOpen = num === curOpen;
   return (
     <div>
       <div className="flex space-x-10 text-center">
-        <span>{num + 1}</span>
+        <span>{num}</span>
         <h1>{title}</h1>
-        <button onClick={handleToggleText}>{showText ? "❌" : "➕"}</button>
+        <button onClick={handleToggle}>{isOpen ? "🔽" : "🔼"}</button>
       </div>
-      <p>{showText ? text : null}</p>
+      <p className="bg-orange-300">{isOpen ? text : null}</p>
     </div>
   );
 };

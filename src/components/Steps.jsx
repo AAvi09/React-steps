@@ -36,18 +36,10 @@ const Steps = () => {
           <p className="text-black p-10 m-10 w-1/2 h-36 rounded-xl bg-slate-300">
             {messages[step]}
           </p>
-          <button
-            className="text-white bg-blue-700 p-2 m-2 rounded-lg"
-            onClick={handleprevious}
-          >
-            previous
-          </button>
-          <button
-            className="text-white bg-blue-700 p-2 m-2 rounded-lg"
-            onClick={handleNext}
-          >
-            next
-          </button>
+          <Button onClick={handleprevious}>◀👈👈previous</Button>
+          <Button onClick={handleNext}>
+            Next<span>👉👉▶</span>
+          </Button>
         </div>
       )}
     </>
@@ -55,3 +47,14 @@ const Steps = () => {
 };
 
 export default Steps;
+
+const Button = ({ onClick, children }) => {
+  return (
+    <button
+      className="text-white bg-blue-700 p-2 m-2 rounded-lg"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
