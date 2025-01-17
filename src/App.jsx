@@ -4,6 +4,7 @@ import Steps from "./components/Steps";
 import Counter from "./components/Counter";
 import Flashcards from "./components/Flashcards";
 import Accordian from "./components/Accordian";
+import MainTip from "./components/MainTip";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Counter />
       <Flashcards />
       <Accordian />
+      <MainTip />
     </div>
   );
 }
