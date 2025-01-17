@@ -36,7 +36,7 @@ const Flashcards = () => {
     },
   ];
   return (
-    <div className="w-screen h-screen bg-zinc-800 flex flex-wrap justify-center items-center gap-6 p-4">
+    <div className="w-screen h-auto bg-zinc-800 flex flex-wrap justify-center items-center gap-6 p-4">
       {questions.map((que) => (
         <Card key={que.id} question={que.question} answers={que.answer} />
       ))}

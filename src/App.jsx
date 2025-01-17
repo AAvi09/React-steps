@@ -3,6 +3,7 @@ import "./index.css";
 import Steps from "./components/Steps";
 import Counter from "./components/Counter";
 import Flashcards from "./components/Flashcards";
+import Accordian from "./components/Accordian";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Steps />
       <Counter />
       <Flashcards />
+      <Accordian />
     </div>
   );
 }
